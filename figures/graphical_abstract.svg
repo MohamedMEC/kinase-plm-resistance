@@ -1,0 +1,245 @@
+<svg viewBox="0 0 1600 1090" xmlns="http://www.w3.org/2000/svg" role="img">
+<title>Graphical abstract: controlled replication and cross-kinase generalization study of zero-shot protein language model sensitivity to kinase-inhibitor resistance</title>
+<desc>Pipeline showing a kinase panel of MET (replication gate), EGFR (background-aware scoring) and ABL1 (controlled delta-pIC50 benchmark) with clinically observed resistance mutations, scored by zero-shot ESM-1b/ESM-2 protein language models at multiple sizes with no task-specific fine-tuning, compared against non-learned baselines (BLOSUM62, conservation, distance to inhibitor and ATP pocket), evaluated against experimental reference measurements split into untreated baseline fitness and drug-treated resistance, analyzed with per-kinase per-drug per-model correlations, bootstrap confidence intervals, paired comparisons and multiple-comparison correction, gated on first reproducing the published MET result before generalizing to EGFR and ABL1.</desc>
+
+<defs>
+  <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+    <path d="M0,0 L0,6 L9,3 z" fill="#A8A29E"/>
+  </marker>
+</defs>
+
+<rect x="0" y="0" width="1600" height="1090" fill="#FAFAF9"/>
+
+<!-- Title -->
+<text x="800" y="48" font-family="Georgia, 'Times New Roman', serif" font-size="24" font-weight="600" fill="#1C1917" text-anchor="middle">Can Protein-Language-Model Scale Improve Zero-Shot Identification of Kinase-Inhibitor Resistance?</text>
+<text x="800" y="78" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#57534E" text-anchor="middle">Controlled replication and cross-kinase generalization: MET (replication gate) &#8594; EGFR (background-aware) &#8594; ABL1 (controlled &#916;pIC50)</text>
+
+<!-- ===================== STAGE 1: Kinase panel ===================== -->
+<rect x="40" y="110" width="330" height="740" rx="14" fill="#F0FDFA" stroke="#0F766E" stroke-width="1.5"/>
+<text x="205" y="152" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#0F766E" text-anchor="middle">1 &#183; KINASE PANEL</text>
+<text x="205" y="173" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#134E4A" text-anchor="middle">clinically observed resistance mutations</text>
+
+<!-- MET card -->
+<rect x="65" y="220" width="280" height="200" rx="10" fill="#FFFFFF" stroke="#14B8A6" stroke-width="1.2"/>
+<circle cx="100" cy="253" r="16" fill="#CCFBF1" stroke="#0F766E" stroke-width="1.5"/>
+<circle cx="100" cy="253" r="4" fill="#0F766E"/>
+<text x="130" y="250" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#134E4A">MET</text>
+<text x="130" y="266" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#57534E">replication-gate kinase</text>
+<rect x="250" y="228" width="85" height="24" rx="5" fill="#DC2626"/>
+<text x="292" y="244.5" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle">GATE</text>
+<text x="85" y="296" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#292524">5,764 DMS variants</text>
+<text x="85" y="313" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#292524">9 real inhibitors (Estevam 2025)</text>
+<text x="85" y="330" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#292524">published ESM-1b: r&#8776;0.28 treated</text>
+<text x="85" y="346" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#292524">vs. r&#8776;0.50 untreated</text>
+<text x="85" y="366" font-family="Arial, Helvetica, sans-serif" font-size="10.5" fill="#0F766E" font-style="italic">data + code confirmed public (MIT)</text>
+<text x="85" y="386" font-family="Arial, Helvetica, sans-serif" font-size="10.5" fill="#B45309" font-style="italic">gate: own scorer built;</text>
+<text x="85" y="400" font-family="Arial, Helvetica, sans-serif" font-size="10.5" fill="#B45309" font-style="italic">Kaggle validation run pending</text>
+
+<!-- EGFR card -->
+<rect x="65" y="435" width="280" height="185" rx="10" fill="#FFFFFF" stroke="#14B8A6" stroke-width="1.2"/>
+<circle cx="100" cy="468" r="16" fill="#CCFBF1" stroke="#0F766E" stroke-width="1.5"/>
+<circle cx="100" cy="468" r="4" fill="#DC2626"/>
+<text x="130" y="465" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#134E4A">EGFR</text>
+<text x="130" y="481" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#57534E">background-aware scoring</text>
+<text x="85" y="505" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#292524">T790M &#183; C797S &#183; L858R</text>
+<text x="85" y="521" font-family="Arial, Helvetica, sans-serif" font-size="10.5" fill="#292524">compound mutant scored vs.</text>
+<text x="85" y="535" font-family="Arial, Helvetica, sans-serif" font-size="10.5" fill="#292524">T790M background, not WT</text>
+<text x="85" y="555" font-family="Arial, Helvetica, sans-serif" font-size="10.5" fill="#1C1917" font-weight="700">PRIMARY: controlled &#916;pIC50 &#8212;</text>
+<text x="85" y="569" font-family="Arial, Helvetica, sans-serif" font-size="10.5" fill="#292524">matched pairs (N pending)</text>
+<text x="85" y="588" font-family="Arial, Helvetica, sans-serif" font-size="10.5" fill="#57534E">SECONDARY: 13,960 ChEMBL +</text>
+<text x="85" y="602" font-family="Arial, Helvetica, sans-serif" font-size="10.5" fill="#57534E">Wang 2025 DMS (pending check)</text>
+
+<!-- ABL1 card -->
+<rect x="65" y="635" width="280" height="180" rx="10" fill="#FFFFFF" stroke="#14B8A6" stroke-width="1.2"/>
+<circle cx="100" cy="668" r="16" fill="#CCFBF1" stroke="#0F766E" stroke-width="1.5"/>
+<circle cx="100" cy="668" r="4" fill="#DC2626"/>
+<text x="130" y="665" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#134E4A">ABL1</text>
+<text x="130" y="681" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#57534E">non-receptor tyrosine kinase</text>
+<text x="85" y="705" font-family="Arial, Helvetica, sans-serif" font-size="10.5" fill="#292524">T315I, M244V, G250E, Y253F/H,</text>
+<text x="85" y="720" font-family="Arial, Helvetica, sans-serif" font-size="10.5" fill="#292524">E255K/V, M351T, F359V/I</text>
+<text x="85" y="741" font-family="Arial, Helvetica, sans-serif" font-size="10.5" fill="#1C1917" font-weight="700">PRIMARY: controlled &#916;pIC50 &#8212;</text>
+<text x="85" y="755" font-family="Arial, Helvetica, sans-serif" font-size="10.5" fill="#292524">matched pairs (N pending)</text>
+<text x="85" y="774" font-family="Arial, Helvetica, sans-serif" font-size="10.5" fill="#57534E">SECONDARY: 3,562+ curated</text>
+<text x="85" y="788" font-family="Arial, Helvetica, sans-serif" font-size="10.5" fill="#57534E">ChEMBL records (validation)</text>
+<text x="85" y="806" font-family="Arial, Helvetica, sans-serif" font-size="10.5" fill="#B45309" font-style="italic">no DMS dataset exists &#8212; ChEMBL only</text>
+
+<text x="205" y="835" font-family="Arial, Helvetica, sans-serif" font-size="10.5" fill="#78716C" text-anchor="middle" font-style="italic">BRAF excluded &#8212; pathway-driven, not</text>
+<text x="205" y="848" font-family="Arial, Helvetica, sans-serif" font-size="10.5" fill="#78716C" text-anchor="middle" font-style="italic">kinase-domain, resistance in the literature</text>
+
+<!-- Arrow 1 -->
+<path d="M 375 490 L 435 490" stroke="#A8A29E" stroke-width="3" marker-end="url(#arrow)"/>
+
+<!-- ===================== STAGE 2: Zero-shot scoring ===================== -->
+<rect x="445" y="110" width="330" height="740" rx="14" fill="#EEF2FF" stroke="#4338CA" stroke-width="1.5"/>
+<text x="610" y="152" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#4338CA" text-anchor="middle">2 &#183; ZERO-SHOT SCORING</text>
+<text x="610" y="172" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#3730A3" text-anchor="middle">no task-specific training or fine-tuning</text>
+<text x="610" y="188" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#3730A3" text-anchor="middle">on kinase-resistance measurements</text>
+
+<!-- sequence icon with masked residue -->
+<g transform="translate(475,220)">
+  <rect x="0" y="0" width="270" height="46" rx="6" fill="#FFFFFF" stroke="#6366F1" stroke-width="1"/>
+  <rect x="8" y="8" width="20" height="30" rx="3" fill="#C7D2FE"/>
+  <rect x="32" y="8" width="20" height="30" rx="3" fill="#C7D2FE"/>
+  <rect x="56" y="8" width="20" height="30" rx="3" fill="#C7D2FE"/>
+  <rect x="80" y="8" width="20" height="30" rx="3" fill="#4338CA"/>
+  <text x="90" y="30" font-family="Arial" font-size="13" fill="#FFFFFF" text-anchor="middle" font-weight="700">?</text>
+  <rect x="104" y="8" width="20" height="30" rx="3" fill="#C7D2FE"/>
+  <rect x="128" y="8" width="20" height="30" rx="3" fill="#C7D2FE"/>
+  <rect x="152" y="8" width="20" height="30" rx="3" fill="#C7D2FE"/>
+  <rect x="176" y="8" width="20" height="30" rx="3" fill="#C7D2FE"/>
+  <text x="200" y="30" font-family="Arial" font-size="10" fill="#4338CA">... 287 aa</text>
+</g>
+<text x="610" y="286" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#4338CA" text-anchor="middle">masked-marginal log-likelihood ratio</text>
+<text x="610" y="301" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#4338CA" text-anchor="middle">(Meier et al. 2021)</text>
+
+<!-- ESM ladder -->
+<rect x="475" y="325" width="270" height="185" rx="10" fill="#FFFFFF" stroke="#818CF8" stroke-width="1.2"/>
+<text x="610" y="348" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="700" fill="#3730A3" text-anchor="middle">model-scale ladder</text>
+<rect x="495" y="362" width="230" height="22" rx="5" fill="#E0E7FF"/>
+<text x="610" y="377.5" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#312E81" text-anchor="middle">ESM-1b &#183; 650M (Estevam baseline)</text>
+<rect x="495" y="388" width="230" height="22" rx="5" fill="#E0E7FF"/>
+<text x="610" y="403.5" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#312E81" text-anchor="middle">ESM-2 &#183; 8M / 35M / 150M</text>
+<rect x="495" y="414" width="230" height="22" rx="5" fill="#E0E7FF"/>
+<text x="610" y="429.5" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#312E81" text-anchor="middle">ESM-2 &#183; 650M / 3B</text>
+<rect x="495" y="440" width="230" height="22" rx="5" fill="#EEF2FF" stroke="#A5B4FC" stroke-width="1" stroke-dasharray="3,2"/>
+<text x="610" y="455.5" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#4338CA" text-anchor="middle">15B &#8212; stretch goal (cloud GPU)</text>
+<text x="610" y="480" font-family="Arial, Helvetica, sans-serif" font-size="10.5" fill="#6366F1" text-anchor="middle" font-style="italic">does scale improve drug-resistance</text>
+<text x="610" y="494" font-family="Arial, Helvetica, sans-serif" font-size="10.5" fill="#6366F1" text-anchor="middle" font-style="italic">signal specifically?</text>
+
+<!-- vs baselines -->
+<rect x="475" y="525" width="270" height="185" rx="10" fill="#F5F5F4" stroke="#A8A29E" stroke-width="1.2" stroke-dasharray="4,3"/>
+<text x="610" y="548" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="700" fill="#57534E" text-anchor="middle">vs. non-learned baselines</text>
+<text x="610" y="572" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#44403C" text-anchor="middle">BLOSUM62 substitution score</text>
+<text x="610" y="592" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#44403C" text-anchor="middle">sequence conservation</text>
+<text x="610" y="612" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#44403C" text-anchor="middle">distance &#8594; bound inhibitor</text>
+<text x="610" y="632" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#44403C" text-anchor="middle">distance &#8594; ATP-pocket residues</text>
+<text x="610" y="658" font-family="Arial, Helvetica, sans-serif" font-size="10.5" fill="#78716C" text-anchor="middle" font-style="italic">does a 3B-parameter model beat</text>
+<text x="610" y="672" font-family="Arial, Helvetica, sans-serif" font-size="10.5" fill="#78716C" text-anchor="middle" font-style="italic">simple geometry / substitution rules?</text>
+
+<!-- gate check-in note -->
+<rect x="475" y="725" width="270" height="100" rx="10" fill="#FEF3C7" stroke="#D97706" stroke-width="1.2"/>
+<text x="610" y="750" font-family="Arial, Helvetica, sans-serif" font-size="11.5" font-weight="700" fill="#92400E" text-anchor="middle">GATE CHECK-IN</text>
+<text x="610" y="770" font-family="Arial, Helvetica, sans-serif" font-size="10.5" fill="#78350F" text-anchor="middle">EGFR/ABL1 scoring proceeds only</text>
+<text x="610" y="785" font-family="Arial, Helvetica, sans-serif" font-size="10.5" fill="#78350F" text-anchor="middle">after MET replication (col. 4) confirms</text>
+<text x="610" y="800" font-family="Arial, Helvetica, sans-serif" font-size="10.5" fill="#78350F" text-anchor="middle">&#961; matches Estevam's published value</text>
+
+<!-- Arrow 2 -->
+<path d="M 780 490 L 840 490" stroke="#A8A29E" stroke-width="3" marker-end="url(#arrow)"/>
+
+<!-- ===================== STAGE 3: Experimental reference data ===================== -->
+<rect x="850" y="110" width="330" height="740" rx="14" fill="#FFFBEB" stroke="#B45309" stroke-width="1.5"/>
+<text x="1015" y="152" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#B45309" text-anchor="middle">3 &#183; EXPERIMENTAL REFERENCE DATA</text>
+<text x="1015" y="172" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#78350F" text-anchor="middle">experimental reference measurements</text>
+
+<!-- dose-response icon -->
+<g transform="translate(945,205)">
+  <line x1="0" y1="70" x2="140" y2="70" stroke="#78350F" stroke-width="1.5"/>
+  <line x1="0" y1="0" x2="0" y2="70" stroke="#78350F" stroke-width="1.5"/>
+  <path d="M 5 10 Q 55 12 85 42 T 135 68" fill="none" stroke="#D97706" stroke-width="3"/>
+</g>
+<text x="1015" y="292" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#78350F" text-anchor="middle">dose &#8594; response (fold-shift)</text>
+
+<!-- untreated vs treated -->
+<rect x="865" y="310" width="135" height="120" rx="8" fill="#FFFFFF" stroke="#F59E0B" stroke-width="1.2"/>
+<text x="932" y="332" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" fill="#92400E" text-anchor="middle">UNTREATED</text>
+<text x="932" y="346" font-family="Arial, Helvetica, sans-serif" font-size="9.5" fill="#78350F" text-anchor="middle">(no-drug baseline)</text>
+<text x="932" y="368" font-family="Arial, Helvetica, sans-serif" font-size="10" fill="#44403C" text-anchor="middle">MET: DMSO fitness</text>
+<text x="932" y="382" font-family="Arial, Helvetica, sans-serif" font-size="10" fill="#44403C" text-anchor="middle">(Estevam DMS)</text>
+<text x="932" y="400" font-family="Arial, Helvetica, sans-serif" font-size="10" fill="#44403C" text-anchor="middle">EGFR/ABL1: n/a</text>
+<text x="932" y="414" font-family="Arial, Helvetica, sans-serif" font-size="10" fill="#44403C" text-anchor="middle">(no DMS)</text>
+
+<circle cx="1015" cy="370" r="17" fill="#FFFBEB" stroke="#B45309" stroke-width="1.2"/>
+<text x="1015" y="374" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" fill="#78350F" text-anchor="middle">vs</text>
+
+<rect x="1030" y="310" width="135" height="120" rx="8" fill="#FFFFFF" stroke="#F59E0B" stroke-width="1.2"/>
+<text x="1097" y="332" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" fill="#92400E" text-anchor="middle">DRUG-TREATED</text>
+<text x="1097" y="346" font-family="Arial, Helvetica, sans-serif" font-size="9.5" fill="#78350F" text-anchor="middle">(resistance)</text>
+<text x="1097" y="368" font-family="Arial, Helvetica, sans-serif" font-size="10" fill="#44403C" text-anchor="middle">MET: 9 inhibitors</text>
+<text x="1097" y="382" font-family="Arial, Helvetica, sans-serif" font-size="10" fill="#44403C" text-anchor="middle">(DMS fitness)</text>
+<text x="1097" y="400" font-family="Arial, Helvetica, sans-serif" font-size="10" fill="#44403C" text-anchor="middle">EGFR/ABL1: ChEMBL</text>
+<text x="1097" y="414" font-family="Arial, Helvetica, sans-serif" font-size="10" fill="#44403C" text-anchor="middle">fold-shift</text>
+
+<text x="1015" y="450" font-family="Arial, Helvetica, sans-serif" font-size="10.5" fill="#92400E" text-anchor="middle" font-style="italic">principal hypothesis: PLM tracks general</text>
+<text x="1015" y="464" font-family="Arial, Helvetica, sans-serif" font-size="10.5" fill="#92400E" text-anchor="middle" font-style="italic">constraint (untreated) better than drug-</text>
+<text x="1015" y="478" font-family="Arial, Helvetica, sans-serif" font-size="10.5" fill="#92400E" text-anchor="middle" font-style="italic">specific resistance (treated)</text>
+
+<!-- ChEMBL tiers -->
+<rect x="880" y="497" width="270" height="160" rx="10" fill="#FFFFFF" stroke="#F59E0B" stroke-width="1.2"/>
+<text x="1015" y="520" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="700" fill="#92400E" text-anchor="middle">ChEMBL analysis tiers</text>
+<text x="1015" y="542" font-family="Arial, Helvetica, sans-serif" font-size="10.5" fill="#1C1917" font-weight="700" text-anchor="middle">PRIMARY: matched WT&#8211;mutant,</text>
+<text x="1015" y="557" font-family="Arial, Helvetica, sans-serif" font-size="10.5" fill="#44403C" text-anchor="middle">same-compound &#916;pIC50 (controlled)</text>
+<text x="1015" y="577" font-family="Arial, Helvetica, sans-serif" font-size="10.5" fill="#57534E" text-anchor="middle">SECONDARY: broader curated</text>
+<text x="1015" y="592" font-family="Arial, Helvetica, sans-serif" font-size="10.5" fill="#57534E" text-anchor="middle">mutant-annotated set (context)</text>
+<text x="1015" y="614" font-family="Arial, Helvetica, sans-serif" font-size="10" fill="#78716C" text-anchor="middle" font-style="italic">same tiering applied to EGFR + ABL1</text>
+<text x="1015" y="628" font-family="Arial, Helvetica, sans-serif" font-size="10" fill="#78716C" text-anchor="middle" font-style="italic">(see column 1 cards for counts)</text>
+
+<text x="1015" y="695" font-family="Arial, Helvetica, sans-serif" font-size="10.5" fill="#78716C" text-anchor="middle" font-style="italic">assay-type (biochemical vs. cell-based)</text>
+<text x="1015" y="710" font-family="Arial, Helvetica, sans-serif" font-size="10.5" fill="#78716C" text-anchor="middle" font-style="italic">and compound-mutation encoding</text>
+<text x="1015" y="725" font-family="Arial, Helvetica, sans-serif" font-size="10.5" fill="#78716C" text-anchor="middle" font-style="italic">(e.g. T790M;C797S) audited before pooling</text>
+
+<!-- Arrow 3 -->
+<path d="M 1185 490 L 1245 490" stroke="#A8A29E" stroke-width="3" marker-end="url(#arrow)"/>
+
+<!-- ===================== STAGE 4: Analysis ===================== -->
+<rect x="1255" y="110" width="305" height="740" rx="14" fill="#FAF5FF" stroke="#7E22CE" stroke-width="1.5"/>
+<text x="1407" y="152" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#7E22CE" text-anchor="middle">4 &#183; ANALYSIS</text>
+<text x="1407" y="172" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#581C87" text-anchor="middle">&#961; per kinase, per drug, per model</text>
+
+<!-- scatter icon -->
+<g transform="translate(1290,210)">
+  <line x1="0" y1="115" x2="230" y2="115" stroke="#581C87" stroke-width="1.5"/>
+  <line x1="0" y1="0" x2="0" y2="115" stroke="#581C87" stroke-width="1.5"/>
+  <circle cx="30" cy="90" r="4" fill="#A855F7"/>
+  <circle cx="55" cy="62" r="4" fill="#A855F7"/>
+  <circle cx="70" cy="85" r="4" fill="#A855F7"/>
+  <circle cx="95" cy="48" r="4" fill="#A855F7"/>
+  <circle cx="125" cy="72" r="4" fill="#A855F7"/>
+  <circle cx="150" cy="35" r="4" fill="#A855F7"/>
+  <circle cx="175" cy="55" r="4" fill="#A855F7"/>
+  <circle cx="205" cy="18" r="4" fill="#A855F7"/>
+  <line x1="15" y1="100" x2="215" y2="22" stroke="#7E22CE" stroke-width="2" stroke-dasharray="5,3"/>
+</g>
+<text x="1407" y="350" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#581C87" text-anchor="middle">PLM score vs. reference measurement</text>
+
+<!-- stats box -->
+<rect x="1280" y="370" width="255" height="175" rx="10" fill="#FFFFFF" stroke="#C084FC" stroke-width="1.2"/>
+<text x="1407" y="393" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#44403C" text-anchor="middle">&#961;(kinase, drug, model) &#8212; never</text>
+<text x="1407" y="408" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#44403C" text-anchor="middle">pooled across drugs first</text>
+<text x="1407" y="428" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#44403C" text-anchor="middle">hierarchical / mutation-clustered</text>
+<text x="1407" y="442" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#44403C" text-anchor="middle">summary across drugs</text>
+<text x="1407" y="462" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#44403C" text-anchor="middle">bootstrap 95% confidence intervals</text>
+<text x="1407" y="482" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#44403C" text-anchor="middle">paired comparison: ESM-1b vs. each</text>
+<text x="1407" y="496" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#44403C" text-anchor="middle">ESM-2 size</text>
+<text x="1407" y="516" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#44403C" text-anchor="middle">Benjamini-Hochberg FDR correction</text>
+
+<!-- result box -->
+<rect x="1280" y="560" width="255" height="120" rx="10" fill="#F3E8FF"/>
+<text x="1407" y="583" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" fill="#581C87" text-anchor="middle">MET status (this session)</text>
+<text x="1407" y="602" font-family="Arial, Helvetica, sans-serif" font-size="10.5" fill="#581C87" text-anchor="middle">precomputed-column check: &#961;=0.065&#8211;0.422</text>
+<text x="1407" y="616" font-family="Arial, Helvetica, sans-serif" font-size="10.5" fill="#581C87" text-anchor="middle">across 9 drugs (matches published)</text>
+<text x="1407" y="634" font-family="Arial, Helvetica, sans-serif" font-size="10.5" fill="#7E22CE" text-anchor="middle" font-style="italic">own from-scratch ESM-1b scorer: built;</text>
+<text x="1407" y="648" font-family="Arial, Helvetica, sans-serif" font-size="10.5" fill="#7E22CE" text-anchor="middle" font-style="italic">Kaggle validation run pending</text>
+
+<text x="1407" y="702" font-family="Arial, Helvetica, sans-serif" font-size="10.5" fill="#78716C" text-anchor="middle" font-style="italic">does the same weak, heterogeneous</text>
+<text x="1407" y="716" font-family="Arial, Helvetica, sans-serif" font-size="10.5" fill="#78716C" text-anchor="middle" font-style="italic">pattern hold for EGFR/ABL1, and for</text>
+<text x="1407" y="730" font-family="Arial, Helvetica, sans-serif" font-size="10.5" fill="#78716C" text-anchor="middle" font-style="italic">untreated vs. treated, across kinases?</text>
+
+<text x="1407" y="758" font-family="Arial, Helvetica, sans-serif" font-size="10" fill="#A8A29E" text-anchor="middle" font-style="italic">novelty = controlled test of whether scale</text>
+<text x="1407" y="772" font-family="Arial, Helvetica, sans-serif" font-size="10" fill="#A8A29E" text-anchor="middle" font-style="italic">beats baselines across kinases/readouts &#8212;</text>
+<text x="1407" y="786" font-family="Arial, Helvetica, sans-serif" font-size="10" fill="#A8A29E" text-anchor="middle" font-style="italic">not "PLM for resistance" alone</text>
+
+<!-- Rigor strip -->
+<line x1="40" y1="862" x2="1560" y2="862" stroke="#D6D3D1" stroke-width="1"/>
+<text x="800" y="882" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#78716C" text-anchor="middle">Rigor for Q1: preregistered analysis plan &#183; open data + scoring code release &#183; explicit explanation if scale does not improve prediction over baselines</text>
+
+<!-- Bottom research question banner -->
+<rect x="40" y="900" width="1520" height="140" rx="14" fill="#1C1917"/>
+<text x="800" y="933" font-family="Georgia, 'Times New Roman', serif" font-size="18" font-weight="600" fill="#FFFFFF" text-anchor="middle">Research question</text>
+<text x="800" y="963" font-family="Arial, Helvetica, sans-serif" font-size="14.5" fill="#E7E5E4" text-anchor="middle">Does protein-language-model scale improve zero-shot identification of drug-specific kinase-inhibitor</text>
+<text x="800" y="987" font-family="Arial, Helvetica, sans-serif" font-size="14.5" fill="#E7E5E4" text-anchor="middle">resistance beyond what simple evolutionary and structural baselines already capture &#8212; or is drug-</text>
+<text x="800" y="1011" font-family="Arial, Helvetica, sans-serif" font-size="14.5" fill="#E7E5E4" text-anchor="middle">specific resistance simply not recoverable from sequence alone?</text>
+
+<!-- Footnote -->
+<text x="1560" y="1060" font-family="Arial, Helvetica, sans-serif" font-size="10" fill="#A8A29E" text-anchor="end">Builds on Estevam et al. 2025, eLife 13:RP101882 (MET, ESM-1b only; r&#8776;0.28&#8594;0.37 max with 13 added features)</text>
+
+</svg>
