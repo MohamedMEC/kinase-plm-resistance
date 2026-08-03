@@ -49,7 +49,12 @@ repo/
    in `results/egfr_abl1_*.csv`.
 4. **Figures** — `scripts/figure3_forest_plot_generate.py` regenerates Figure 3 from
    `results/figure3_source_data.csv`. Figures 1, 2, 4, and 5 were generated inline within
-   the notebooks above from the corresponding result tables.
+   the notebooks above from the corresponding result tables: Figure 1 uses
+   `results/met_full_model_drug_correlation_table.csv` (per-drug, per-model correlations),
+   Figure 2 uses `results/met_baseline_comparison.csv` (pooled ESM-1b vs. baseline
+   correlations), and the EGFR/ABL1 analysis uses
+   `results/egfr_abl1_final_results_document_matched.csv` (document-and-format-matched
+   pairing table).
 
 ## Data sources
 
@@ -58,18 +63,6 @@ repo/
 - EGFR (UniProt P00533) and ABL1 (UniProt P00519, isoform 1b) sequences: UniProt.
 - Bioactivity data: ChEMBL.
 - Crystal structures: RCSB PDB, accessions 6LUD (EGFR) and 1IEP (ABL1).
-
-## Known gaps in this deposit
-
-Three source-data files cited in the manuscript as `\texttt{...}` were generated during
-earlier analysis passes and were not retained in this working copy:
-`met_baseline_comparison.csv` (Figure 2 source data — point-estimate pooled correlations
-per baseline), `met_full_model_drug_correlation_table.csv` (Figure 1 source data — per-drug,
-per-model correlation table), and `egfr_abl1_final_results_document_matched.csv` (the
-document-and-format-matched EGFR/ABL1 pairing table). These need to be re-exported from
-the Kaggle/Colab session that originally produced them before the deposit is fully
-complete — the notebooks in `notebooks/` contain the code that generates them, they just
-weren't saved as standalone CSVs alongside the other result tables.
 
 ## Package versions
 
