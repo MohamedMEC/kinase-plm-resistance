@@ -1,0 +1,13 @@
+# Fill in exact pinned versions from your Kaggle/Colab environment before archiving.
+# These are the packages the notebooks and scripts import; versions below are placeholders.
+numpy
+pandas
+scipy
+statsmodels
+matplotlib
+scikit-learn
+rdkit
+# ESM scoring - one of:
+# fair-esm
+# transformers
+torch
