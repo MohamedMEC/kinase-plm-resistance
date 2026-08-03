@@ -1,17 +1,14 @@
 # Does Protein-Language-Model Scale Improve Zero-Shot Identification of Kinase-Inhibitor Resistance?
 
-Code, notebooks, processed results, and manuscript source for a study testing zero-shot
-masked-marginal scoring from ESM-1b and three ESM-2 sizes (150M, 650M, 3B) against
-measured kinase-inhibitor resistance data for MET, EGFR, and ABL1, benchmarked against
-non-learned structural and sequence baselines.
+Code, notebooks, and processed results for a study testing zero-shot masked-marginal
+scoring from ESM-1b and three ESM-2 sizes (150M, 650M, 3B) against measured
+kinase-inhibitor resistance data for MET, EGFR, and ABL1, benchmarked against non-learned
+structural and sequence baselines.
 
 ## Repository structure
 
 ```
 repo/
-├── manuscript/          Manuscript source (sn-jnl LaTeX) and bibliography
-│   ├── manuscript_sn.tex
-│   └── sn-bibliography.bib
 ├── notebooks/            Kaggle/Colab notebooks used for scoring and analysis
 │   ├── 00_rdkit_intro_demo.ipynb
 │   ├── 01_met_esm_scoring.ipynb
@@ -23,8 +20,8 @@ repo/
 │   ├── met_baseline_bootstrap_round1_SUPERSEDED.py    <- earlier, methodologically flawed version, kept for provenance
 │   ├── figure3_forest_plot_generate.py
 │   └── rdkit_demo.py
-├── results/                Processed result tables (CSV) referenced in the manuscript
-└── docs/                   Planning, literature review, and revision-history notes (not part of the manuscript)
+├── results/                Processed result tables (CSV)
+└── docs/                   Planning, literature review, and revision-history notes
 ```
 
 ## Reproducing the analysis
@@ -43,7 +40,7 @@ repo/
    `scripts/met_baseline_bootstrap_round1_SUPERSEDED.py` is the earlier, methodologically
    weaker version (mutations resampled independently per drug rather than sharing one
    resampled index set across drugs) — kept only for transparency about what changed
-   between revisions, not used for any number reported in the manuscript.
+   between revisions.
 3. **EGFR/ABL1 scoring and analysis** — run `notebooks/03_egfr_abl1_esm_scoring.ipynb`.
    Produces the permutation tests, leave-one-out analysis, and paired-baseline bootstrap
    in `results/egfr_abl1_*.csv`.
@@ -73,6 +70,5 @@ Kaggle/Colab environment rather than assumed.
 
 ## Citation
 
-If you use this code or these results, please cite the associated manuscript (citation
-details to be added once a DOI is assigned) and the underlying MET dataset
+If you use this code or these results, please cite the underlying MET dataset
 (Estevam et al. 2025, eLife, DOI 10.7554/eLife.101882.3).
